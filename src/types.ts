@@ -125,6 +125,7 @@ export interface FRProps {
   allCollapsed?: boolean;
   requiredMark?: RequiredMark;
   requiredWidget?: string;
+  renderTitle?: Slot;
   /** 覆盖默认的校验信息 */
   validateMessages?: Record<string, string>;
   beforeFinish?: (_params?: ValidateParams) => Error[] | Promise<Error[]>;
@@ -155,3 +156,34 @@ export type WidgetAddonsType = FormInstance & {
   dataPath: string;
   schemaPath: string;
 };
+
+export interface FRPropsCtx {
+  /** 表单的全局共享属性 */
+  globalProps: Record<string, any>;
+  Layout: Layout;
+  theme: string;
+  column: string | number;
+  debounceInput?: boolean;
+  /** 显示当前表单内部状态 */
+  debug?: boolean;
+  /** 标签宽度 */
+  labelWidth: string | number;
+  /** 覆盖默认的校验信息 */
+  validateMessages: any;
+  locale: 'cn' | 'en';
+  /** 只读模式 */
+  readOnly: boolean;
+  /** 禁用模式 */
+  disabled: boolean;
+  /** 对象组件是否折叠（全局的控制） */
+  allCollapsed: boolean;
+  /** 自定义组件 */
+  widgets: Record<string, any>;
+  /** 组件和schema的映射规则 */
+  mapping: Record<string, string>;
+  labelAlign: LabelAlign;
+  colon: boolean;
+  renderTitle: Slot;
+  requiredMark: RequiredMark;
+  methods: Record<string, (...args: any[]) => any>;
+}

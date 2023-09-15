@@ -7,10 +7,24 @@ import { resolve } from 'path';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import lessCopy from './plugins/less-copy.js';
 import dts from 'vite-plugin-dts';
+import AutoImport from 'unplugin-auto-import/vite';
 const { name } = require('./package.json');
 
 export default defineConfig({
-  plugins: [vue(), eslint(), vueJsx(), lessCopy(), dts()],
+  plugins: [
+    vue(),
+    eslint(),
+    vueJsx(),
+    lessCopy(),
+    dts(),
+    AutoImport({
+      imports: ['vue'],
+      dts: 'types/auto-imports.d.ts',
+      eslintrc: {
+        enabled: true,
+      },
+    }),
+  ],
   build: {
     target: 'modules',
     minify: false,

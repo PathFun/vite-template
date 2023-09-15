@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
 import FR from './FR.vue';
 import { type Schema } from './types';
 const schema = reactive<Schema>({});
