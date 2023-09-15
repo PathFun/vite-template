@@ -1,5 +1,5 @@
 {
-  "name": "vite-template",
+  "name": "form-render-vue3",
   "private": true,
   "version": "0.0.1",
   "files": [
@@ -7,12 +7,12 @@
   ],
   "types": "./dist",
   "style": "./dist/style.css",
-  "main": "./dist/vite-template.umd.js",
-  "module": "./dist/vite-template.es.js",
+  "main": "./dist/form-render-vue3.umd.js",
+  "module": "./dist/form-render-vue3.es.js",
   "exports": {
     ".": {
-      "import": "./dist/vite-template.es.js",
-      "require": "./dist/vite-template.umd.js"
+      "import": "./dist/form-render-vue3.es.js",
+      "require": "./dist/form-render-vue3.umd.js"
     },
     "./dist/style.css": "./dist/style.css",
     "./dist/style.less": "./dist/style.less"
@@ -37,13 +37,12 @@
   },
   "dependencies": {
     "ant-design-vue": "^3.2.9",
-    "vue": "^3.2.25"
+    "vue": "^3.3.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.2",
     "@commitlint/config-conventional": "^17.0.2",
     "@ls-lint/ls-lint": "^1.11.2",
-    "@rollup/plugin-typescript": "^8.3.3",
     "@types/jest": "^28.1.3",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
@@ -70,13 +69,14 @@
     "stylelint-config-standard": "^26.0.0",
     "stylelint-order": "^5.0.0",
     "typescript": "^4.5.4",
-    "vite": "^2.9.9",
+    "vite": "^4.4.9",
+    "vite-plugin-dts": "^3.5.3",
     "vite-plugin-eslint": "^1.6.1",
-    "vitest": "^0.15.2",
+    "vitest": "^0.34.4",
     "vue-tsc": "^0.34.7"
   },
   "peerDependencies": {
-    "vue": ">=3.2.0"
+    "vue": ">=3.3.0"
   },
   "lint-staged": {
     "*.{ts,js,vue, tsx, jsx}": [
